@@ -1,8 +1,8 @@
 package com.example.e17010346.myapplication
 
 class Port(
-    val id: Int,
-    val name: String,
-    val lagitude: Float,
-    val longitude: Float
+    val id: Int? = 0,
+    val name: String? = "",
+    val lagitude: Float? = 0.0f,
+    val longitude: Float? = 0.0f
 ){}

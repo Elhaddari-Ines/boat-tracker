@@ -1,15 +1,22 @@
 package com.example.e17010346.myapplication
 
-import android.graphics.ColorSpace
-import android.widget.ArrayAdapter
+import java.io.Serializable
 
-class ContainerShip(
-    val id: Int,
-    val name: String,
-    val captainName: String,
-    val lagitude: Float,
-    val longitude: Float,
-    val port: Port,
-    val type: ContainerShipType,
-    val Containers: List<Container>
-): ArrayAdapter<Container>(){}
+class ContainerShip {
+    data class ContainershipData(
+        var id: Int? = 0,
+        var name: String? = "",
+        var captainName: String? = "",
+        var latitude: Float? = 0.0f,
+        var longitude: Float? = 0.0f,
+        var port: Port? = Port(),
+        var type: ContainerShipType? = ContainerShipType(),
+        var containers: List<Container>? = listOf()
+    ) : Serializable {
+
+        override fun toString(): String {
+            return "\n" + this.name + "\n" + "Capitaine : " + this.captainName + "\n"
+        }
+
+    }
+}
