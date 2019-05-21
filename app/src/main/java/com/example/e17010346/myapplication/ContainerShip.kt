@@ -14,9 +14,6 @@ class ContainerShip {
         var containers: List<Container>? = listOf()
     ) : Serializable {
 
-        override fun toString(): String {
-            return "\n" + this.name + "\n" + "Capitaine : " + this.captainName + "\n"
-        }
 
     }
 }
