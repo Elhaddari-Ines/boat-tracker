@@ -10,8 +10,6 @@ import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.e17010346.myapplication.R.layout.container
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         private val mContext: Context
 
         //about the names of boats
-        private  val vnamesBoat = arrayListOf<String>(
+        private  val vnameBoat = arrayListOf<String>(
             "Providence", "Argo", "Calypso", "Arcadia", "Epomeo"
         )
 
@@ -48,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         // how many rows in my list
         override fun getCount(): Int {
-            return vnamesBoat.size
+            return vnameBoat.size
         }
 
         override fun getItemId(position: Int): Long {
@@ -65,36 +63,18 @@ class MainActivity : AppCompatActivity() {
             val rowMain = layoutInflater.inflate(R.layout.container, viewGroup, false)
 
             val nameBoatView = rowMain.findViewById<TextView>(R.id.name)
-            nameBoatView.text = vnamesBoat.get(position)
+            nameBoatView.text = vnameBoat.get(position)
 
             val nameCaptainView = rowMain.findViewById<TextView>(R.id.captainName)
             nameCaptainView.text = vnameCaptain.get(position)
 
-            val text = nameBoatView
-
-//            mContext.toast(text)
-
-//            val boatNumber = rowMain.findViewById<TextView>(R.id.boatNumber)
-//            boatNumber.text = "Boat number: $position"
-
-
-
+            onClick(nameBoatView)
             return rowMain
-//            val textView = TextView(mContext)
-//            textView.text = "HERE is my ROW for my LISTVIEW"
-//            return textView
-        }
-    }
-//
-//    private fun generateData(): ArrayList<ContainerShip>{
-//        var result = findViewById<ListView>(containerShip)
-//
-//        for (i in 0..9){
-//            var ship1 = ContainerShip().toString()
-//            result.add(ship1)
-//        }
-//
-//        return result
-//    }
 
+        }
+        fun onClick(v: View?) {
+            Toast.makeText(mContext,"kotlin",Toast.LENGTH_SHORT).show()
+        }
+
+    }
 }
